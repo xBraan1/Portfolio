@@ -15,7 +15,7 @@
   --color-border-dark: #1A1A1A;
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
-  --font-script: 'Caveat', cursive;
+  --font-script: 'Alex Brush', cursive;
 }
 
 /* Base styles */
@@ -156,4 +156,25 @@ html, html.light, html.dark {
 .signature-line {
   background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
   height: 1px;
+}
+
+/* Signature text styling */
+.signature-text {
+  font-family: 'Alex Brush', cursive;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  position: relative;
+  display: inline-block;
+  line-height: 1.2;
+}
+
+.signature-text::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 5%;
+  right: 5%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, currentColor 20%, currentColor 80%, transparent);
+  opacity: 0.2;
 }
