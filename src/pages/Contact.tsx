@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { SEO, Breadcrumbs } from '../components/Layout';
 import { profile } from '../data/content';
 import { Send, CheckCircle, AlertCircle, ExternalLink, Shield } from 'lucide-react';
@@ -80,9 +81,9 @@ export default function Contact() {
               <p className="text-slate-muted mb-6">
                 Thank you for reaching out. Please note that this is a frontend demonstration — in production, your message would be delivered through a configured backend service.
               </p>
-              <a href="/" className="text-teal-accent hover:underline font-medium">
+              <Link to="/" className="text-teal-accent hover:underline font-medium">
                 ← Return to Homepage
-              </a>
+              </Link>
             </div>
           </div>
         </main>
@@ -207,7 +208,7 @@ export default function Contact() {
                     />
                     <span className="text-sm text-slate-muted">
                       I consent to the processing of my personal data as described in the{' '}
-                      <a href="/privacy" className="text-teal-accent hover:underline">Privacy Policy</a>. <span className="text-red-500">*</span>
+                      <Link to="/privacy" className="text-teal-accent hover:underline">Privacy Policy</Link>. <span className="text-red-500">*</span>
                     </span>
                   </label>
                   {errors.consent && <p className="text-red-500 text-xs mt-1" role="alert">{errors.consent}</p>}

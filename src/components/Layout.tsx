@@ -18,7 +18,6 @@ export function Navigation() {
 
   useEffect(() => {
     setIsOpen(false);
-    window.scrollTo(0, 0);
   }, [location.pathname]);
 
   useEffect(() => {
@@ -28,6 +27,17 @@ export function Navigation() {
       document.body.style.overflow = '';
     }
     return () => { document.body.style.overflow = ''; };
+  }, [isOpen]);
+
+  // Close mobile menu on Escape key
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isOpen) {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
   }, [isOpen]);
 
   return (
@@ -53,19 +63,23 @@ export function Navigation() {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-1">
-            {navItems.map(item => (
-              <Link
-                key={item.path}
-                to={item.path}
-                className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
-                  location.pathname === item.path
-                    ? 'text-teal-accent bg-teal-accent/10'
-                    : 'text-slate-muted hover:text-midnight dark:hover:text-offwhite hover:bg-slate-muted/10'
-                }`}
-              >
-                {item.label}
-              </Link>
-            ))}
+            {navItems.map(item => {
+              const isActive = location.pathname === item.path || 
+                (item.path !== '/' && location.pathname.startsWith(item.path + '/'));
+              return (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+                    isActive
+                      ? 'text-teal-accent bg-teal-accent/10'
+                      : 'text-slate-muted hover:text-midnight dark:hover:text-offwhite hover:bg-slate-muted/10'
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
           </div>
 
           {/* Right side */}
@@ -100,19 +114,23 @@ export function Navigation() {
         {isOpen && (
           <div className="lg:hidden absolute top-full left-0 right-0 bg-white dark:bg-midnight border-b border-border-light dark:border-border-dark shadow-lg">
             <div className="px-4 py-4 space-y-1">
-              {navItems.map(item => (
-                <Link
-                  key={item.path}
-                  to={item.path}
-                  className={`block px-4 py-3 rounded-lg text-base font-medium transition-colors ${
-                    location.pathname === item.path
-                      ? 'text-teal-accent bg-teal-accent/10'
-                      : 'text-slate-muted hover:text-midnight dark:hover:text-offwhite hover:bg-slate-muted/10'
-                  }`}
-                >
-                  {item.label}
-                </Link>
-              ))}
+              {navItems.map(item => {
+                const isActive = location.pathname === item.path || 
+                  (item.path !== '/' && location.pathname.startsWith(item.path + '/'));
+                return (
+                  <Link
+                    key={item.path}
+                    to={item.path}
+                    className={`block px-4 py-3 rounded-lg text-base font-medium transition-colors ${
+                      isActive
+                        ? 'text-teal-accent bg-teal-accent/10'
+                        : 'text-slate-muted hover:text-midnight dark:hover:text-offwhite hover:bg-slate-muted/10'
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                );
+              })}
               <Link
                 to="/contact"
                 className="block px-4 py-3 mt-4 bg-teal-accent text-white rounded-lg text-center font-medium"
@@ -302,9 +320,25 @@ export function SEO({ title, description, canonical, ogImage }: {
 }
 
 export function ScrollToTop() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+    // If there's a hash, scroll to the element after a brief delay
+    // to allow lazy-loaded content to render
+    if (hash) {
+      const timer = setTimeout(() => {
+        const element = document.getElementById(hash.replace('#', ''));
+        if (element) {
+          const offset = 100; // Account for fixed header
+          const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+          window.scrollTo({ top: elementPosition - offset, behavior: 'smooth' });
+        } else {
+          window.scrollTo(0, 0);
+        }
+      }, 100);
+      return () => clearTimeout(timer);
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [pathname, hash]);
   return null;
 }

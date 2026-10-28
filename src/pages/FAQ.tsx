@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { SEO, Breadcrumbs } from '../components/Layout';
 import { faqItems } from '../data/content';
 import { Search, ChevronDown } from 'lucide-react';
@@ -127,12 +128,12 @@ export default function FAQ() {
               <p className="text-slate-muted mb-6">
                 Don't see your question here? Feel free to reach out through the contact page.
               </p>
-              <a
-                href="/contact"
+              <Link
+                to="/contact"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-teal-accent hover:bg-teal-dark text-white rounded-lg font-semibold transition-all"
               >
                 Send a Question
-              </a>
+              </Link>
             </div>
           </section>
         </div>

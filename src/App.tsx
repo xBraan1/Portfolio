@@ -1,5 +1,5 @@
 import React, { Suspense, lazy } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { ThemeProvider } from './contexts/ThemeContext';
 import { LanguageProvider } from './contexts/LanguageContext';
@@ -25,7 +25,7 @@ function LoadingFallback() {
   return (
     <div className="min-h-screen flex items-center justify-center">
       <div className="flex flex-col items-center gap-4">
-        <div className="w-10 h-10 border-3 border-teal-accent/30 border-t-teal-accent rounded-full animate-spin" />
+        <div className="w-10 h-10 border-[3px] border-teal-accent/30 border-t-teal-accent rounded-full animate-spin" />
         <p className="text-sm text-slate-muted">Loading...</p>
       </div>
     </div>
@@ -43,12 +43,12 @@ function Layout({ children }: { children: React.ReactNode }) {
       <Footer />
       {/* Sticky mobile CTA */}
       <div className="fixed bottom-0 left-0 right-0 sm:hidden bg-white/95 dark:bg-midnight/95 backdrop-blur-md border-t border-border-light dark:border-border-dark p-3 z-40">
-        <a
-          href="/contact"
+        <Link
+          to="/contact"
           className="block w-full text-center py-3 bg-teal-accent hover:bg-teal-dark text-white rounded-lg font-semibold transition-colors"
         >
           Discuss an Opportunity
-        </a>
+        </Link>
       </div>
     </div>
   );
