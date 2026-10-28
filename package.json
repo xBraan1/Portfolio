@@ -6,10 +6,8 @@
     "dev": "vite",
     "build": "vite build",
     "typecheck": "tsc --noEmit",
-    "predeploy": "npm run build",
-    "deploy": "wrangler pages deploy dist",
-    "deploy:workers": "wrangler deploy",
-    "deploy:cloudflare": "npm install && npm run build && wrangler deploy"
+    "deploy": "npm run build && wrangler pages deploy dist",
+    "deploy:local": "npm run build && wrangler pages deploy dist"
   },
   "dependencies": {
     "@dnd-kit/core": "^6.1.0",
