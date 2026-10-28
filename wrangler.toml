@@ -1,8 +1,5 @@
-name = "xbraan1"
+name = "portfolio"
 compatibility_date = "2026-10-28"
-
-[build]
-command = "npm install && npm run build"
 
 [assets]
 directory = "./dist"
