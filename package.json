@@ -8,7 +8,8 @@
     "typecheck": "tsc --noEmit",
     "predeploy": "npm run build",
     "deploy": "wrangler pages deploy dist",
-    "deploy:workers": "wrangler deploy"
+    "deploy:workers": "wrangler deploy",
+    "deploy:cloudflare": "npm install && npm run build && wrangler deploy"
   },
   "dependencies": {
     "@dnd-kit/core": "^6.1.0",
