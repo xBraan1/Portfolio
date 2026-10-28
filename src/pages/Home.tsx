@@ -2,7 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/Layout';
 import { profile, expertiseAreas, caseStudies } from '../data/content';
-import { ArrowRight, Shield, Brain, Target, CheckCircle, Code, MessageSquare } from 'lucide-react';
+import { SignatureLogo } from '../components/SignatureLogo';
+import { Shield, Brain, Target, CheckCircle, ArrowRight } from 'lucide-react';
 
 export default function Home() {
   const keyExpertise = expertiseAreas.slice(0, 6);
@@ -16,89 +17,81 @@ export default function Home() {
       />
 
       {/* Hero Section */}
-      <section className="relative pt-24 lg:pt-32 pb-16 lg:pb-24 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-teal-accent/5 via-transparent to-teal-accent/3 dark:from-teal-accent/10 dark:to-transparent" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <section className="relative pt-28 lg:pt-40 pb-20 lg:pb-32 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
             <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-teal-accent/10 border border-teal-accent/20 rounded-full text-teal-accent text-sm font-medium mb-6">
-                <span className="w-2 h-2 bg-teal-accent rounded-full animate-pulse" />
+              <div className="inline-flex items-center gap-3 px-4 py-2 border border-white/10 text-neutral-400 text-xs font-light tracking-[0.15em] uppercase mb-8">
+                <span className="w-1.5 h-1.5 bg-white rounded-full" />
                 Available for remote engagements
               </div>
 
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-midnight dark:text-offwhite leading-tight mb-6">
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-[1.05] mb-6 tracking-tight">
                 {profile.name}
               </h1>
 
-              <p className="text-xl sm:text-2xl text-teal-accent font-semibold mb-4">
+              <p className="text-xl sm:text-2xl text-neutral-400 font-light mb-6 tracking-wide">
                 {profile.title}
               </p>
 
-              <p className="text-lg text-slate-muted mb-8 leading-relaxed max-w-xl">
+              <p className="text-base text-neutral-500 mb-10 leading-relaxed max-w-xl font-light">
                 {profile.summary}
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   to="/contact"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-teal-accent hover:bg-teal-dark text-white rounded-lg font-semibold transition-all hover:shadow-lg hover:shadow-teal-accent/25"
+                  className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-white text-black font-medium tracking-wide hover:bg-neutral-200 transition-colors"
                 >
                   Discuss an Opportunity
-                  <ArrowRight size={18} />
+                  <ArrowRight size={16} />
                 </Link>
                 <Link
                   to="/expertise"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 border-2 border-midnight/20 dark:border-offwhite/20 text-midnight dark:text-offwhite rounded-lg font-semibold hover:border-teal-accent hover:text-teal-accent transition-all"
+                  className="inline-flex items-center justify-center gap-2 px-7 py-3.5 border border-white/20 text-white font-light tracking-wide hover:border-white/50 hover:bg-white/5 transition-all"
                 >
                   Explore My Expertise
                 </Link>
               </div>
             </div>
 
-            {/* Professional Identity Card */}
-            <div className="relative">
-              <div className="relative bg-white dark:bg-charcoal rounded-2xl p-8 shadow-xl border border-border-light dark:border-border-dark">
-                <div className="absolute -top-3 -right-3 w-20 h-20 bg-teal-accent/10 rounded-full blur-xl" />
-                <div className="absolute -bottom-3 -left-3 w-16 h-16 bg-teal-accent/10 rounded-full blur-xl" />
+            {/* Signature Logo Card */}
+            <div className="relative flex items-center justify-center">
+              <div className="relative w-full max-w-md aspect-square flex items-center justify-center border border-white/5 bg-neutral-950">
+                {/* Subtle corner accents */}
+                <div className="absolute top-0 left-0 w-8 h-8 border-t border-l border-white/20" />
+                <div className="absolute top-0 right-0 w-8 h-8 border-t border-r border-white/20" />
+                <div className="absolute bottom-0 left-0 w-8 h-8 border-b border-l border-white/20" />
+                <div className="absolute bottom-0 right-0 w-8 h-8 border-b border-r border-white/20" />
                 
-                <div className="relative space-y-6">
-                  {/* Identity */}
-                  <div className="flex items-center gap-4">
-                    <div className="w-16 h-16 bg-gradient-to-br from-teal-accent to-teal-dark rounded-xl flex items-center justify-center text-white text-2xl font-bold shadow-lg">
-                      BK
+                <div className="text-center p-8">
+                  <SignatureLogo width={200} color="#FFFFFF" />
+                  
+                  <div className="mt-10 space-y-6">
+                    {/* Stats */}
+                    <div className="grid grid-cols-2 gap-6">
+                      <div>
+                        <p className="text-3xl font-bold text-white">{profile.stats.yearsExperience}</p>
+                        <p className="text-xs text-neutral-500 mt-1 font-light tracking-wide uppercase">Years</p>
+                      </div>
+                      <div>
+                        <p className="text-3xl font-bold text-white">{profile.stats.dataPointsAnnotated}</p>
+                        <p className="text-xs text-neutral-500 mt-1 font-light tracking-wide uppercase">Data Points</p>
+                      </div>
+                      <div>
+                        <p className="text-3xl font-bold text-white">{profile.stats.qualityScore}</p>
+                        <p className="text-xs text-neutral-500 mt-1 font-light tracking-wide uppercase">Quality</p>
+                      </div>
+                      <div>
+                        <p className="text-3xl font-bold text-white">3</p>
+                        <p className="text-xs text-neutral-500 mt-1 font-light tracking-wide uppercase">Modalities</p>
+                      </div>
                     </div>
-                    <div>
-                      <h2 className="text-xl font-bold text-midnight dark:text-offwhite">{profile.name}</h2>
-                      <p className="text-sm text-slate-muted">{profile.tagline}</p>
-                    </div>
-                  </div>
 
-                  {/* Stats */}
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="bg-offwhite dark:bg-midnight/50 rounded-lg p-4">
-                      <p className="text-2xl font-bold text-teal-accent">{profile.stats.yearsExperience}</p>
-                      <p className="text-xs text-slate-muted mt-1">Years Experience</p>
-                    </div>
-                    <div className="bg-offwhite dark:bg-midnight/50 rounded-lg p-4">
-                      <p className="text-2xl font-bold text-teal-accent">{profile.stats.dataPointsAnnotated}</p>
-                      <p className="text-xs text-slate-muted mt-1">Data Points</p>
-                    </div>
-                    <div className="bg-offwhite dark:bg-midnight/50 rounded-lg p-4">
-                      <p className="text-2xl font-bold text-teal-accent">{profile.stats.qualityScore}</p>
-                      <p className="text-xs text-slate-muted mt-1">Quality Score</p>
-                    </div>
-                    <div className="bg-offwhite dark:bg-midnight/50 rounded-lg p-4">
-                      <p className="text-lg font-bold text-teal-accent">{profile.stats.modalitiesEvaluated}</p>
-                      <p className="text-xs text-slate-muted mt-1">Modalities</p>
-                    </div>
-                  </div>
-
-                  {/* Core Focus */}
-                  <div className="space-y-2">
-                    <p className="text-xs font-semibold uppercase tracking-wider text-slate-muted">Core Focus</p>
-                    <div className="flex flex-wrap gap-2">
+                    {/* Tags */}
+                    <div className="flex flex-wrap gap-2 justify-center">
                       {['RLHF', 'SFT', 'Prompt Engineering', 'Model Quality', 'AI Safety'].map(tag => (
-                        <span key={tag} className="px-2.5 py-1 bg-teal-accent/10 text-teal-accent text-xs font-medium rounded-md">
+                        <span key={tag} className="px-3 py-1 border border-white/10 text-neutral-400 text-xs font-light tracking-wider">
                           {tag}
                         </span>
                       ))}
@@ -111,31 +104,30 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Divider */}
+      <div className="signature-line max-w-7xl mx-auto" />
+
       {/* Proof Points */}
-      <section className="py-16 lg:py-24 bg-white dark:bg-charcoal/50 border-y border-border-light dark:border-border-dark">
+      <section className="py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-midnight dark:text-offwhite mb-4">
-              What I Bring to AI Evaluation
+          <div className="text-center mb-16">
+            <p className="text-xs uppercase tracking-[0.2em] text-neutral-500 mb-4">What I Bring</p>
+            <h2 className="text-3xl lg:text-4xl font-bold text-white tracking-tight">
+              Evaluation Excellence
             </h2>
-            <p className="text-slate-muted max-w-2xl mx-auto">
-              Rigorous, systematic evaluation grounded in deep understanding of model behavior, quality standards, and safety requirements.
-            </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/5">
             {[
               { icon: Brain, title: 'Deep Evaluation', desc: 'Multi-dimensional assessment across helpfulness, accuracy, safety, and instruction following.' },
               { icon: Shield, title: 'Safety Focus', desc: 'Systematic identification of harmful, biased, or policy-violating content.' },
               { icon: Target, title: 'Quality Driven', desc: 'Consistent quality scores above 95% through rigorous self-review and calibration.' },
               { icon: CheckCircle, title: 'Reliable Delivery', desc: '3+ years of dependable remote work with structured async collaboration.' },
             ].map(({ icon: Icon, title, desc }) => (
-              <div key={title} className="p-6 rounded-xl bg-offwhite dark:bg-midnight/50 border border-border-light dark:border-border-dark hover:border-teal-accent/30 transition-colors group">
-                <div className="w-12 h-12 bg-teal-accent/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-teal-accent/20 transition-colors">
-                  <Icon size={24} className="text-teal-accent" />
-                </div>
-                <h3 className="font-semibold text-midnight dark:text-offwhite mb-2">{title}</h3>
-                <p className="text-sm text-slate-muted leading-relaxed">{desc}</p>
+              <div key={title} className="p-8 lg:p-10 bg-black hover:bg-neutral-950 transition-colors group">
+                <Icon size={24} className="text-white mb-6" strokeWidth={1.5} />
+                <h3 className="font-medium text-white mb-3 tracking-wide">{title}</h3>
+                <p className="text-sm text-neutral-500 leading-relaxed font-light">{desc}</p>
               </div>
             ))}
           </div>
@@ -143,36 +135,34 @@ export default function Home() {
       </section>
 
       {/* Expertise Overview */}
-      <section className="py-16 lg:py-24">
+      <section className="py-20 lg:py-28 border-t border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-end justify-between mb-12">
+          <div className="flex items-end justify-between mb-14">
             <div>
-              <h2 className="text-3xl font-bold text-midnight dark:text-offwhite mb-4">
+              <p className="text-xs uppercase tracking-[0.2em] text-neutral-500 mb-4">Capabilities</p>
+              <h2 className="text-3xl lg:text-4xl font-bold text-white tracking-tight">
                 Core Expertise
               </h2>
-              <p className="text-slate-muted max-w-xl">
-                Comprehensive capabilities across the AI evaluation and training pipeline.
-              </p>
             </div>
             <Link
               to="/expertise"
-              className="hidden sm:inline-flex items-center gap-2 text-teal-accent hover:text-teal-dark font-medium transition-colors"
+              className="hidden sm:inline-flex items-center gap-2 text-neutral-400 hover:text-white text-sm font-light tracking-wide transition-colors"
             >
-              View all <ArrowRight size={16} />
+              View all <ArrowRight size={14} />
             </Link>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/5">
             {keyExpertise.map(area => (
               <div
                 key={area.id}
-                className="p-5 rounded-xl border border-border-light dark:border-border-dark hover:border-teal-accent/30 hover:shadow-md transition-all group"
+                className="p-7 bg-black hover:bg-neutral-950 transition-colors group"
               >
-                <span className="text-xs font-medium text-teal-accent uppercase tracking-wider">{area.category}</span>
-                <h3 className="font-semibold text-midnight dark:text-offwhite mt-2 mb-2 group-hover:text-teal-accent transition-colors">
+                <span className="text-[10px] font-medium text-neutral-500 uppercase tracking-[0.2em]">{area.category}</span>
+                <h3 className="font-medium text-white mt-3 mb-3 tracking-wide group-hover:text-neutral-300 transition-colors">
                   {area.title}
                 </h3>
-                <p className="text-sm text-slate-muted leading-relaxed line-clamp-3">
+                <p className="text-sm text-neutral-500 leading-relaxed font-light line-clamp-3">
                   {area.description}
                 </p>
               </div>
@@ -182,31 +172,29 @@ export default function Home() {
           <div className="mt-8 text-center sm:text-left">
             <Link
               to="/expertise"
-              className="inline-flex items-center gap-2 text-teal-accent hover:text-teal-dark font-medium transition-colors sm:hidden"
+              className="inline-flex items-center gap-2 text-neutral-400 hover:text-white text-sm font-light tracking-wide transition-colors sm:hidden"
             >
-              View all expertise <ArrowRight size={16} />
+              View all expertise <ArrowRight size={14} />
             </Link>
           </div>
         </div>
       </section>
 
       {/* Selected Work Preview */}
-      <section className="py-16 lg:py-24 bg-white dark:bg-charcoal/50 border-y border-border-light dark:border-border-dark">
+      <section className="py-20 lg:py-28 border-t border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-end justify-between mb-12">
+          <div className="flex items-end justify-between mb-14">
             <div>
-              <h2 className="text-3xl font-bold text-midnight dark:text-offwhite mb-4">
+              <p className="text-xs uppercase tracking-[0.2em] text-neutral-500 mb-4">Portfolio</p>
+              <h2 className="text-3xl lg:text-4xl font-bold text-white tracking-tight">
                 Selected Work
               </h2>
-              <p className="text-slate-muted max-w-xl">
-                Illustrative case studies demonstrating evaluation methodology and approach.
-              </p>
             </div>
             <Link
               to="/work"
-              className="hidden sm:inline-flex items-center gap-2 text-teal-accent hover:text-teal-dark font-medium transition-colors"
+              className="hidden sm:inline-flex items-center gap-2 text-neutral-400 hover:text-white text-sm font-light tracking-wide transition-colors"
             >
-              View all <ArrowRight size={16} />
+              View all <ArrowRight size={14} />
             </Link>
           </div>
 
@@ -215,25 +203,25 @@ export default function Home() {
               <Link
                 key={study.id}
                 to={`/work#${study.id}`}
-                className="block p-6 rounded-xl border border-border-light dark:border-border-dark hover:border-teal-accent/30 hover:shadow-lg transition-all group"
+                className="block p-8 border border-white/5 hover:border-white/20 transition-all group bg-neutral-950"
               >
-                <div className="flex flex-wrap gap-2 mb-4">
+                <div className="flex flex-wrap gap-2 mb-6">
                   {study.tags.map(tag => (
-                    <span key={tag} className="px-2 py-0.5 bg-teal-accent/10 text-teal-accent text-xs font-medium rounded">
+                    <span key={tag} className="px-2.5 py-1 border border-white/10 text-neutral-400 text-xs font-light tracking-wider">
                       {tag}
                     </span>
                   ))}
-                  <span className="px-2 py-0.5 bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400 text-xs font-medium rounded">
+                  <span className="px-2.5 py-1 border border-white/5 text-neutral-600 text-xs font-light tracking-wider">
                     Illustrative
                   </span>
                 </div>
-                <h3 className="text-xl font-semibold text-midnight dark:text-offwhite mb-3 group-hover:text-teal-accent transition-colors">
+                <h3 className="text-xl font-medium text-white mb-4 tracking-wide group-hover:text-neutral-300 transition-colors">
                   {study.title}
                 </h3>
-                <p className="text-sm text-slate-muted leading-relaxed mb-4">
+                <p className="text-sm text-neutral-500 leading-relaxed mb-6 font-light">
                   {study.context}
                 </p>
-                <span className="inline-flex items-center gap-1 text-teal-accent text-sm font-medium">
+                <span className="inline-flex items-center gap-2 text-white text-sm font-light tracking-wide">
                   Read more <ArrowRight size={14} />
                 </span>
               </Link>
@@ -243,31 +231,27 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 lg:py-24">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="bg-gradient-to-br from-teal-accent/10 to-teal-accent/5 dark:from-teal-accent/20 dark:to-teal-accent/5 rounded-2xl p-8 lg:p-12 border border-teal-accent/20">
-            <div className="flex justify-center mb-6">
-              <div className="w-16 h-16 bg-teal-accent/20 rounded-full flex items-center justify-center">
-                <MessageSquare size={28} className="text-teal-accent" />
-              </div>
-            </div>
-            <h2 className="text-3xl font-bold text-midnight dark:text-offwhite mb-4">
-              Let's Discuss Your AI Evaluation Needs
+      <section className="py-20 lg:py-28 border-t border-white/5">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="border border-white/10 p-10 lg:p-16">
+            <SignatureLogo width={160} color="#FFFFFF" className="mx-auto mb-10 opacity-60" />
+            <h2 className="text-3xl font-bold text-white mb-5 tracking-tight">
+              Let's Work Together
             </h2>
-            <p className="text-slate-muted mb-8 max-w-xl mx-auto">
+            <p className="text-neutral-400 mb-10 max-w-lg mx-auto font-light leading-relaxed">
               Whether you need LLM evaluation, RLHF annotation, SFT data creation, or quality assurance — I'm available for remote engagements and contract opportunities.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-teal-accent hover:bg-teal-dark text-white rounded-lg font-semibold transition-all hover:shadow-lg"
+                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-white text-black font-medium tracking-wide hover:bg-neutral-200 transition-colors"
               >
                 Discuss an Opportunity
-                <ArrowRight size={18} />
+                <ArrowRight size={16} />
               </Link>
               <Link
                 to="/services"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 border-2 border-teal-accent/30 text-teal-accent rounded-lg font-semibold hover:bg-teal-accent/5 transition-all"
+                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 border border-white/20 text-white font-light tracking-wide hover:border-white/50 hover:bg-white/5 transition-all"
               >
                 Explore Services
               </Link>

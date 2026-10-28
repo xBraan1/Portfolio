@@ -11,28 +11,22 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setThemeState] = useState<Theme>(() => {
-    if (typeof window !== 'undefined') {
-      const stored = localStorage.getItem('theme') as Theme;
-      if (stored) return stored;
-      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    }
-    return 'light';
-  });
+  // xBraan1 signature theme is always dark
+  const [theme] = useState<Theme>('dark');
 
   useEffect(() => {
     const root = document.documentElement;
-    root.classList.remove('light', 'dark');
-    root.classList.add(theme);
-    localStorage.setItem('theme', theme);
-  }, [theme]);
-
-  const toggleTheme = useCallback(() => {
-    setThemeState(prev => prev === 'light' ? 'dark' : 'light');
+    root.classList.remove('light');
+    root.classList.add('dark');
+    localStorage.setItem('theme', 'dark');
   }, []);
 
-  const setTheme = useCallback((newTheme: Theme) => {
-    setThemeState(newTheme);
+  const toggleTheme = useCallback(() => {
+    // No-op: xBraan1 theme is always dark
+  }, []);
+
+  const setTheme = useCallback((_newTheme: Theme) => {
+    // No-op: xBraan1 theme is always dark
   }, []);
 
   return (

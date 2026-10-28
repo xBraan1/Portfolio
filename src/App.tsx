@@ -23,10 +23,10 @@ import { NotFound, ThankYou } from './pages/Utility';
 
 function LoadingFallback() {
   return (
-    <div className="min-h-screen flex items-center justify-center">
+    <div className="min-h-screen flex items-center justify-center bg-black">
       <div className="flex flex-col items-center gap-4">
-        <div className="w-10 h-10 border-[3px] border-teal-accent/30 border-t-teal-accent rounded-full animate-spin" />
-        <p className="text-sm text-slate-muted">Loading...</p>
+        <div className="w-10 h-10 border-[2px] border-white/20 border-t-white rounded-full animate-spin" />
+        <p className="text-sm text-neutral-500 font-light tracking-wide">Loading...</p>
       </div>
     </div>
   );
@@ -34,7 +34,7 @@ function LoadingFallback() {
 
 function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="min-h-screen flex flex-col bg-offwhite dark:bg-midnight text-midnight dark:text-offwhite transition-colors">
+    <div className="min-h-screen flex flex-col bg-black text-white">
       <Navigation />
       <ScrollToTop />
       <div className="flex-1">
@@ -42,10 +42,10 @@ function Layout({ children }: { children: React.ReactNode }) {
       </div>
       <Footer />
       {/* Sticky mobile CTA */}
-      <div className="fixed bottom-0 left-0 right-0 sm:hidden bg-white/95 dark:bg-midnight/95 backdrop-blur-md border-t border-border-light dark:border-border-dark p-3 z-40">
+      <div className="fixed bottom-0 left-0 right-0 sm:hidden bg-black/95 backdrop-blur-md border-t border-white/10 p-3 z-40">
         <Link
           to="/contact"
-          className="block w-full text-center py-3 bg-teal-accent hover:bg-teal-dark text-white rounded-lg font-semibold transition-colors"
+          className="block w-full text-center py-3 bg-white text-black font-medium tracking-wide hover:bg-neutral-200 transition-colors"
         >
           Discuss an Opportunity
         </Link>

@@ -29,10 +29,10 @@ export default function Expertise() {
           <Breadcrumbs items={[{ label: 'Expertise' }]} />
 
           <header className="mb-12">
-            <h1 className="text-4xl lg:text-5xl font-bold text-midnight dark:text-offwhite mb-4">
+            <h1 className="text-4xl lg:text-5xl font-bold text-white mb-4 tracking-tight">
               My Expertise
             </h1>
-            <p className="text-xl text-slate-muted leading-relaxed max-w-3xl">
+            <p className="text-xl text-neutral-400 leading-relaxed max-w-3xl font-light">
               A comprehensive overview of my capabilities across the AI evaluation and training pipeline. Each area is grounded in verified professional experience.
             </p>
           </header>
