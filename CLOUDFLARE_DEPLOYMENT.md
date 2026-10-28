@@ -1,149 +1,92 @@
-# Cloudflare Pages Deployment Guide
+# Cloudflare Deployment Guide
 
-## Deployment Configuration
+## Project Type
 
-When deploying to Cloudflare Pages via GitHub integration, use these settings in your Cloudflare Pages dashboard:
+This is a **Vite + React + TypeScript SPA** that builds to the `dist/` directory and deploys as a Cloudflare Worker with static assets.
 
-### Build Settings
+## Deployment Method
 
-- **Framework preset**: `Vite` (or "None")
+The project uses **Wrangler CLI** with the `[assets]` binding to serve static files from a Worker.
+
+### Build Command
+```bash
+npm run build
+```
+Output: `dist/` directory containing `index.html`, CSS, JS, and assets.
+
+### Deploy Command
+```bash
+npx wrangler deploy
+```
+
+## Configuration
+
+### wrangler.toml
+```toml
+name = "brian-kibet-portfolio"
+compatibility_date = "2024-01-01"
+
+[assets]
+directory = "./dist"
+not_found_handling = "single-page-application"
+```
+
+- `[assets]` tells Wrangler to serve static files from `./dist`
+- `not_found_handling = "single-page-application"` enables SPA routing (all unknown routes serve `index.html`)
+
+## Cloudflare Pages GitHub Integration
+
+If deploying via Cloudflare Pages dashboard with GitHub integration:
+
+### Option A: Let Pages Handle Build (Recommended)
+In Cloudflare Pages settings:
 - **Build command**: `npm run build`
 - **Build output directory**: `dist`
-- **Root directory**: `/` (leave as default)
-- **Node.js version**: `18` or higher
+- **Deploy command**: *(leave empty — let Pages handle it)*
 
-### Environment Variables (Optional)
-
-No environment variables are required for basic deployment.
-
-## Files Included for Deployment
-
-The following files ensure proper deployment and SPA routing:
-
-1. **`wrangler.toml`** - Wrangler configuration (for CLI deployments)
-   - Specifies `dist` as the build output directory
-   - Defines build command
-
-2. **`public/_redirects`** - SPA routing fallback
-   - Redirects all routes to `index.html` for client-side routing
-
-3. **`public/_routes.json`** - Cloudflare Pages routing rules
-   - Tells Cloudflare which routes to handle as SPA vs static assets
-
-4. **`public/robots.txt`** - SEO robots configuration
-5. **`public/sitemap.xml`** - Sitemap for search engines
-6. **`public/llms.txt`** - AI/LLM guidance file
-
-## Deployment Methods
-
-### Method 1: Cloudflare Pages GitHub Integration (Recommended)
-
-1. Go to [Cloudflare Dashboard](https://dash.cloudflare.com/)
-2. Navigate to **Workers & Pages** → **Create**
-3. Select **Pages** → **Connect to Git**
-4. Choose your GitHub repository
-5. Configure build settings:
-   - **Build command**: `npm run build`
-   - **Build output directory**: `dist`
-6. Click **Save and Deploy**
-
-Cloudflare will automatically build and deploy on every push to your repository.
-
-### Method 2: Wrangler CLI
-
-If you prefer using Wrangler CLI:
-
-```bash
-# Install Wrangler globally (if not already installed)
-npm install -g wrangler
-
-# Login to Cloudflare
-wrangler login
-
-# Deploy
-wrangler pages deploy dist
-```
+### Option B: Keep Custom Deploy Command
+If you must use a custom deploy command:
+- **Deploy command**: `npx wrangler deploy`
+- The `wrangler.toml` in the repo will be used
 
 ## SPA Routing
 
-The site uses React Router for client-side routing. The `_redirects` and `_routes.json` files ensure that:
-
+The React Router handles client-side routing. The `not_found_handling = "single-page-application"` setting in `wrangler.toml` ensures that:
 - Direct URL access to any route works (e.g., `/about`, `/services/llm-evaluation`)
 - Browser refresh on any page works correctly
-- Static assets (CSS, JS, images) are served directly
-- All other routes fall back to `index.html` for client-side routing
+- All unknown routes fall back to `index.html`
 
-## Post-Deployment Checklist
+## Files in dist/
 
-After deployment, verify:
-
-- [ ] Homepage loads correctly
-- [ ] Navigation works on all pages
-- [ ] Direct URL access works (e.g., `yoursite.com/about`)
-- [ ] Mobile responsive design works
-- [ ] Dark theme displays correctly
-- [ ] Contact form loads (backend integration required for actual submission)
-- [ ] Social links open in new tabs
-- [ ] No console errors in browser dev tools
-
-## Custom Domain (Optional)
-
-To add a custom domain:
-
-1. Go to your Cloudflare Pages project
-2. Navigate to **Custom domains**
-3. Click **Set up a custom domain**
-4. Follow the instructions to add your domain
-5. Configure DNS records as instructed
+After build, `dist/` contains:
+- `index.html` — Entry point
+- `assets/` — JS and CSS bundles (code-split)
+- `robots.txt` — SEO configuration
+- `sitemap.xml` — Sitemap
+- `llms.txt` — AI/LLM guidance
+- `_redirects` — Fallback SPA routing (for Pages compatibility)
+- `_routes.json` — Cloudflare Pages routing rules
 
 ## Troubleshooting
 
 ### "Could not detect a directory containing static files"
-
-This error means Wrangler can't find the built files. Ensure:
-
-1. The build command completed successfully
-2. The `dist` directory exists after build
-3. `wrangler.toml` has `pages_build_output_dir = "dist"`
+This error means Wrangler cannot find the `dist/` directory. Ensure:
+1. `npm run build` has been run successfully
+2. `dist/` directory exists and contains `index.html`
+3. `wrangler.toml` has `[assets]` with `directory = "./dist"`
 
 ### Pages not loading after refresh
+If refreshing shows a 404:
+1. Verify `not_found_handling = "single-page-application"` is in `wrangler.toml`
+2. Redeploy
 
-If refreshing a page shows a 404:
+### Build fails
+1. Check Node.js version (18+)
+2. Run `npm install` first
+3. Run `npm run build` locally to verify
 
-1. Verify `public/_redirects` exists with content: `/*  /index.html  200`
-2. Verify `public/_routes.json` exists with proper routing rules
-3. Redeploy the site
+## Performance
 
-### Build fails on Cloudflare
-
-If the build fails:
-
-1. Check the build logs in Cloudflare dashboard
-2. Verify Node.js version is 18 or higher
-3. Ensure all dependencies are in `package.json`
-4. Try building locally first: `npm run build`
-
-## Performance Optimization
-
-The site is already optimized with:
-
-- Code splitting (lazy-loaded pages)
-- Gzip compression (handled by Cloudflare)
-- Optimized images (no large images included)
-- Minimal JavaScript bundle (~75KB gzipped)
-- Preconnected fonts for faster loading
-
-## Analytics (Optional)
-
-To enable Google Analytics:
-
-1. Add your GA4 measurement ID to environment variables:
-   - Variable: `VITE_GA_MEASUREMENT_ID`
-   - Value: Your GA4 measurement ID (e.g., `G-XXXXXXXXXX`)
-2. Redeploy the site
-
-## Support
-
-For Cloudflare Pages support:
-- [Cloudflare Pages Documentation](https://developers.cloudflare.com/pages/)
-- [Cloudflare Community](https://community.cloudflare.com/)
+- Bundle size: ~75KB gzipped
+- Code splitting: 10 lazy-loaded page chunks
+- Fonts: Preconnected Google Fonts (Inter, Alex Brush)
