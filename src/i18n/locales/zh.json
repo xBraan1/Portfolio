@@ -1,0 +1,62 @@
+{
+  "nav": {
+    "home": "首页",
+    "about": "关于",
+    "expertise": "专业",
+    "services": "服务",
+    "experience": "经历",
+    "work": "作品",
+    "skills": "技能",
+    "insights": "文章",
+    "faq": "常见问题",
+    "contact": "联系"
+  },
+  "hero": {
+    "name": "Brian Kibet",
+    "title": "AI 训练师 & LLM 评估专家",
+    "tagline": "RLHF、SFT、提示工程与模型质量",
+    "summary": "AI 训练师和 LLM 评估专家,拥有 3 年以上远程经验,专注于人类反馈强化学习(RLHF)、监督微调数据创建、成对偏好排序和多模态质量评估。",
+    "cta": {
+      "primary": "讨论机会",
+      "secondary": "探索我的专业"
+    },
+    "availability": "可接受远程项目"
+  },
+  "stats": {
+    "years": "年经验",
+    "dataPoints": "数据点",
+    "quality": "质量评分",
+    "modalities": "模态"
+  },
+  "expertise": {
+    "title": "核心专业",
+    "subtitle": "AI 评估流程中的全面能力",
+    "categories": {
+      "core": "核心评估",
+      "methods": "评估方法",
+      "safety": "质量与安全",
+      "nlp": "NLP 与数据",
+      "communication": "沟通"
+    }
+  },
+  "about": {
+    "title": "关于我",
+    "intro": "专注于使语言模型更有帮助、更诚实、更无害的 AI 评估专家。",
+    "approach": "我的方法",
+    "philosophy": "质量理念"
+  },
+  "contact": {
+    "title": "联系方式",
+    "subtitle": "可接受远程项目和合同机会",
+    "form": {
+      "name": "姓名",
+      "email": "电子邮件",
+      "message": "消息",
+      "send": "发送"
+    }
+  },
+  "footer": {
+    "rights": "版权所有",
+    "built": "精准构建"
+  }
+}

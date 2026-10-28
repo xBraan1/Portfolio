@@ -1,0 +1,62 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "expertise": "Expertise",
+    "services": "Services",
+    "experience": "Expérience",
+    "work": "Travaux",
+    "skills": "Compétences",
+    "insights": "Articles",
+    "faq": "FAQ",
+    "contact": "Contact"
+  },
+  "hero": {
+    "name": "Brian Kibet",
+    "title": "Formateur IA & Spécialiste en Évaluation LLM",
+    "tagline": "RLHF, SFT, Ingénierie de Prompts & Qualité des Modèles",
+    "summary": "Formateur IA et Spécialiste en Évaluation LLM avec plus de 3 ans d'expérience à distance en apprentissage par renforcement avec feedback humain (RLHF), création de données pour ajustement supervisé, classement par préférence par paires et évaluation de qualité multimodale.",
+    "cta": {
+      "primary": "Discuter d'une Opportunité",
+      "secondary": "Explorer Mon Expertise"
+    },
+    "availability": "Disponible pour missions à distance"
+  },
+  "stats": {
+    "years": "Années d'Expérience",
+    "dataPoints": "Points de Données",
+    "quality": "Score de Qualité",
+    "modalities": "Modalités"
+  },
+  "expertise": {
+    "title": "Expertise Principale",
+    "subtitle": "Compétences complètes dans le pipeline d'évaluation IA",
+    "categories": {
+      "core": "Évaluation Centrale",
+      "methods": "Méthodes d'Évaluation",
+      "safety": "Qualité & Sécurité",
+      "nlp": "TAL & Données",
+      "communication": "Communication"
+    }
+  },
+  "about": {
+    "title": "À Propos",
+    "intro": "Spécialiste en évaluation IA axé sur rendre les modèles de langage plus utiles, honnêtes et inoffensifs.",
+    "approach": "Mon Approche",
+    "philosophy": "Philosophie de Qualité"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Disponible pour missions à distance et opportunités contractuelles",
+    "form": {
+      "name": "Nom",
+      "email": "Email",
+      "message": "Message",
+      "send": "Envoyer"
+    }
+  },
+  "footer": {
+    "rights": "Tous droits réservés",
+    "built": "Construit avec précision"
+  }
+}

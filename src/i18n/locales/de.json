@@ -1,0 +1,62 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "about": "Über mich",
+    "expertise": "Expertise",
+    "services": "Dienste",
+    "experience": "Erfahrung",
+    "work": "Arbeiten",
+    "skills": "Fähigkeiten",
+    "insights": "Artikel",
+    "faq": "FAQ",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "name": "Brian Kibet",
+    "title": "KI-Trainer & LLM-Bewertungsspezialist",
+    "tagline": "RLHF, SFT, Prompt-Engineering & Modellqualität",
+    "summary": "KI-Trainer und LLM-Bewertungsspezialist mit über 3 Jahren Remote-Erfahrung in bestärkendem Lernen mit menschlichem Feedback (RLHF), Erstellung von Daten für überwachtes Fine-Tuning, paarweiser Präferenz-Rangfolge und multimodaler Qualitätsbewertung.",
+    "cta": {
+      "primary": "Chance Besprechen",
+      "secondary": "Meine Expertise Erkunden"
+    },
+    "availability": "Verfügbar für Remote-Projekte"
+  },
+  "stats": {
+    "years": "Jahre Erfahrung",
+    "dataPoints": "Datenpunkte",
+    "quality": "Qualitätsbewertung",
+    "modalities": "Modalitäten"
+  },
+  "expertise": {
+    "title": "Kern-Expertise",
+    "subtitle": "Umfassende Fähigkeiten in der KI-Bewertungspipeline",
+    "categories": {
+      "core": "Kernbewertung",
+      "methods": "Bewertungsmethoden",
+      "safety": "Qualität & Sicherheit",
+      "nlp": "NLP & Daten",
+      "communication": "Kommunikation"
+    }
+  },
+  "about": {
+    "title": "Über Mich",
+    "intro": "Spezialist für KI-Bewertung mit Fokus darauf, Sprachmodelle hilfreicher, ehrlicher und harmloser zu machen.",
+    "approach": "Mein Ansatz",
+    "philosophy": "Qualitätsphilosophie"
+  },
+  "contact": {
+    "title": "Kontakt",
+    "subtitle": "Verfügbar für Remote-Projekte und Vertragsmöglichkeiten",
+    "form": {
+      "name": "Name",
+      "email": "E-Mail",
+      "message": "Nachricht",
+      "send": "Senden"
+    }
+  },
+  "footer": {
+    "rights": "Alle Rechte vorbehalten",
+    "built": "Mit Präzision erstellt"
+  }
+}

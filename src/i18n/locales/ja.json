@@ -1,0 +1,62 @@
+{
+  "nav": {
+    "home": "ホーム",
+    "about": "概要",
+    "expertise": "専門",
+    "services": "サービス",
+    "experience": "経歴",
+    "work": "実績",
+    "skills": "スキル",
+    "insights": "記事",
+    "faq": "FAQ",
+    "contact": "お問い合わせ"
+  },
+  "hero": {
+    "name": "Brian Kibet",
+    "title": "AI トレーナー & LLM 評価スペシャリスト",
+    "tagline": "RLHF、SFT、プロンプトエンジニアリング & モデル品質",
+    "summary": "人間のフィードバックからの強化学習(RLHF)、教師ありファインチューニングデータ作成、一対の嗜好ランキング、マルチモーダル品質評価において、3年以上のリモート経験を持つ AI トレーナーおよび LLM 評価スペシャリスト。",
+    "cta": {
+      "primary": "機会を相談する",
+      "secondary": "専門知識を探す"
+    },
+    "availability": "リモート案件対応可能"
+  },
+  "stats": {
+    "years": "年の経験",
+    "dataPoints": "データポイント",
+    "quality": "品質スコア",
+    "modalities": "モダリティ"
+  },
+  "expertise": {
+    "title": "中核的専門",
+    "subtitle": "AI 評価パイプラインにおける包括的な能力",
+    "categories": {
+      "core": "中核評価",
+      "methods": "評価方法",
+      "safety": "品質と安全",
+      "nlp": "NLP とデータ",
+      "communication": "コミュニケーション"
+    }
+  },
+  "about": {
+    "title": "私について",
+    "intro": "言語モデルをより有用で、正直で、無害にすることに焦点を当てた AI 評価スペシャリスト。",
+    "approach": "私のアプローチ",
+    "philosophy": "品質哲学"
+  },
+  "contact": {
+    "title": "お問い合わせ",
+    "subtitle": "リモート案件および契約機会に対応可能",
+    "form": {
+      "name": "名前",
+      "email": "メール",
+      "message": "メッセージ",
+      "send": "送信"
+    }
+  },
+  "footer": {
+    "rights": "全著作権所有",
+    "built": "精密に構築"
+  }
+}
