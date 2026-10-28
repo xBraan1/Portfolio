@@ -1,0 +1,62 @@
+{
+  "nav": {
+    "home": "Início",
+    "about": "Sobre",
+    "expertise": "Expertise",
+    "services": "Serviços",
+    "experience": "Experiência",
+    "work": "Trabalhos",
+    "skills": "Habilidades",
+    "insights": "Artigos",
+    "faq": "FAQ",
+    "contact": "Contato"
+  },
+  "hero": {
+    "name": "Brian Kibet",
+    "title": "Treinador de IA & Especialista em Avaliação de LLM",
+    "tagline": "RLHF, SFT, Engenharia de Prompts & Qualidade de Modelos",
+    "summary": "Treinador de IA e Especialista em Avaliação de LLM com mais de 3 anos de experiência remota em aprendizado por reforço com feedback humano (RLHF), criação de dados para ajuste supervisionado, classificação de preferência por pares e avaliação de qualidade multimodal.",
+    "cta": {
+      "primary": "Discutir uma Oportunidade",
+      "secondary": "Explorar Minha Expertise"
+    },
+    "availability": "Disponível para projetos remotos"
+  },
+  "stats": {
+    "years": "Anos de Experiência",
+    "dataPoints": "Pontos de Dados",
+    "quality": "Pontuação de Qualidade",
+    "modalities": "Modalidades"
+  },
+  "expertise": {
+    "title": "Expertise Principal",
+    "subtitle": "Capacidades abrangentes no pipeline de avaliação de IA",
+    "categories": {
+      "core": "Avaliação Central",
+      "methods": "Métodos de Avaliação",
+      "safety": "Qualidade & Segurança",
+      "nlp": "PLN & Dados",
+      "communication": "Comunicação"
+    }
+  },
+  "about": {
+    "title": "Sobre Mim",
+    "intro": "Especialista em avaliação de IA focado em tornar modelos de linguagem mais úteis, honestos e inofensivos.",
+    "approach": "Minha Abordagem",
+    "philosophy": "Filosofia de Qualidade"
+  },
+  "contact": {
+    "title": "Contato",
+    "subtitle": "Disponível para projetos remotos e oportunidades contratuais",
+    "form": {
+      "name": "Nome",
+      "email": "Email",
+      "message": "Mensagem",
+      "send": "Enviar"
+    }
+  },
+  "footer": {
+    "rights": "Todos os direitos reservados",
+    "built": "Construído com precisão"
+  }
+}

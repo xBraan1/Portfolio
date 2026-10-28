@@ -1,0 +1,62 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Acerca de",
+    "expertise": "Experiencia",
+    "services": "Servicios",
+    "experience": "Trayectoria",
+    "work": "Trabajos",
+    "skills": "Habilidades",
+    "insights": "Artículos",
+    "faq": "Preguntas",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "name": "Brian Kibet",
+    "title": "Entrenador de IA y Especialista en Evaluación de LLM",
+    "tagline": "RLHF, SFT, Ingeniería de Prompts y Calidad de Modelos",
+    "summary": "Entrenador de IA y Especialista en Evaluación de LLM con más de 3 años de experiencia remota en aprendizaje por refuerzo con retroalimentación humana (RLHF), creación de datos para ajuste supervisado, clasificación por preferencia por pares y evaluación de calidad multimodal.",
+    "cta": {
+      "primary": "Discutir una Oportunidad",
+      "secondary": "Explorar Mi Experiencia"
+    },
+    "availability": "Disponible para trabajos remotos"
+  },
+  "stats": {
+    "years": "Años de Experiencia",
+    "dataPoints": "Puntos de Datos",
+    "quality": "Puntuación de Calidad",
+    "modalities": "Modalidades"
+  },
+  "expertise": {
+    "title": "Experiencia Principal",
+    "subtitle": "Capacidades integrales en el pipeline de evaluación de IA",
+    "categories": {
+      "core": "Evaluación Central",
+      "methods": "Métodos de Evaluación",
+      "safety": "Calidad y Seguridad",
+      "nlp": "PLN y Datos",
+      "communication": "Comunicación"
+    }
+  },
+  "about": {
+    "title": "Sobre Mí",
+    "intro": "Especialista en evaluación de IA enfocado en hacer que los modelos de lenguaje sean más útiles, honestos e inofensivos.",
+    "approach": "Mi Enfoque",
+    "philosophy": "Filosofía de Calidad"
+  },
+  "contact": {
+    "title": "Contacto",
+    "subtitle": "Disponible para trabajos remotos y oportunidades contractuales",
+    "form": {
+      "name": "Nombre",
+      "email": "Correo Electrónico",
+      "message": "Mensaje",
+      "send": "Enviar Mensaje"
+    }
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados",
+    "built": "Construido con precisión"
+  }
+}

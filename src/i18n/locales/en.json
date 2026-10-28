@@ -1,0 +1,62 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "expertise": "Expertise",
+    "services": "Services",
+    "experience": "Experience",
+    "work": "Work",
+    "skills": "Skills",
+    "insights": "Insights",
+    "faq": "FAQ",
+    "contact": "Contact"
+  },
+  "hero": {
+    "name": "Brian Kibet",
+    "title": "AI Trainer & LLM Evaluation Specialist",
+    "tagline": "RLHF, SFT, Prompt Engineering & Model Quality",
+    "summary": "AI Trainer and LLM Evaluation Specialist with 3+ years of remote experience in reinforcement learning from human feedback (RLHF), supervised fine-tuning data creation, pairwise preference ranking, and multimodal quality assessment.",
+    "cta": {
+      "primary": "Discuss an Opportunity",
+      "secondary": "Explore My Expertise"
+    },
+    "availability": "Available for remote engagements"
+  },
+  "stats": {
+    "years": "Years Experience",
+    "dataPoints": "Data Points",
+    "quality": "Quality Score",
+    "modalities": "Modalities"
+  },
+  "expertise": {
+    "title": "Core Expertise",
+    "subtitle": "Comprehensive capabilities across the AI evaluation pipeline",
+    "categories": {
+      "core": "Core Evaluation",
+      "methods": "Evaluation Methods",
+      "safety": "Quality & Safety",
+      "nlp": "NLP & Data",
+      "communication": "Communication"
+    }
+  },
+  "about": {
+    "title": "About Me",
+    "intro": "AI evaluation specialist with a focus on making language models more helpful, honest, and harmless.",
+    "approach": "My Approach",
+    "philosophy": "Quality Philosophy"
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "subtitle": "Available for remote engagements and contract opportunities",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "send": "Send Message"
+    }
+  },
+  "footer": {
+    "rights": "All rights reserved",
+    "built": "Built with precision"
+  }
+}

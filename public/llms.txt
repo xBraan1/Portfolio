@@ -1,0 +1,42 @@
+# Brian Kibet — AI Trainer & LLM Evaluation Specialist
+
+> AI Trainer & LLM Evaluation Specialist with expertise in RLHF, SFT, Prompt Engineering, and Model Quality.
+
+## About
+
+Brian Kibet is an AI Trainer and LLM Evaluation Specialist with 3+ years of remote experience in reinforcement learning from human feedback (RLHF), supervised fine-tuning data creation, pairwise preference ranking, rubric-based scoring, and multimodal quality assessment.
+
+## Key Pages
+
+- [Home](https://briankibet.dev/) — Professional profile and overview
+- [About](https://briankibet.dev/about) — Background and approach
+- [Expertise](https://briankibet.dev/expertise) — Detailed capabilities
+- [Services](https://briankibet.dev/services) — Professional service offerings
+- [Experience](https://briankibet.dev/experience) — Work history
+- [Selected Work](https://briankibet.dev/work) — Illustrative case studies
+- [Skills](https://briankibet.dev/skills) — Tools and technical skills
+- [Insights](https://briankibet.dev/insights) — Articles and professional writing
+- [FAQ](https://briankibet.dev/faq) — Frequently asked questions
+- [Contact](https://briankibet.dev/contact) — Get in touch
+
+## Services
+
+- LLM Evaluation
+- RLHF & Preference Ranking
+- SFT Data Creation
+- Prompt Evaluation
+- Multimodal Evaluation
+- AI Safety & Quality
+- Data Quality & QA
+- NLP & Text Classification
+- Documentation & Feedback
+
+## Contact
+
+Use the [contact form](https://briankibet.dev/contact) for professional inquiries.
+
+## Social
+
+- LinkedIn: https://www.linkedin.com/in/caleb-hiller
+- X: https://x.com/xBraan1
+- Telegram: https://t.me/xBraan

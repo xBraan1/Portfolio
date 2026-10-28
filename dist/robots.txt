@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://briankibet.dev/sitemap.xml
+
+# Disallow access to any API or internal paths
+Disallow: /api/
+Disallow: /_internal/
