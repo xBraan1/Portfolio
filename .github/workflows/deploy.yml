@@ -3,6 +3,8 @@ name: Deploy to Cloudflare Pages
 on:
   push:
     branches: [main, master]
+  pull_request:
+    branches: [main, master]
   workflow_dispatch:
 
 permissions:
@@ -12,7 +14,7 @@ permissions:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    name: Build and Deploy
+    name: Build and Deploy to Cloudflare Pages
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -32,14 +34,16 @@ jobs:
       - name: Verify build output
         run: |
           if [ ! -d "dist" ]; then
-            echo "Error: dist directory not found after build"
+            echo "❌ Error: dist directory not found after build"
             exit 1
           fi
           if [ ! -f "dist/index.html" ]; then
-            echo "Error: dist/index.html not found"
+            echo "❌ Error: dist/index.html not found"
             exit 1
           fi
-          echo "Build verified: dist directory exists with $(ls -1 dist | wc -l) files"
+          file_count=$(ls -1 dist | wc -l)
+          echo "✅ Build verified: dist directory exists with $file_count files"
+          ls -la dist/
       
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
