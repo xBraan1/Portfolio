@@ -1,61 +1,37 @@
-name: Deploy to Cloudflare Pages
+name: Build and Deploy to Cloudflare Workers
 
 on:
   push:
-    branches: [main, master]
+    branches:
+      - main
+      - ai-trainer-portfolio-website-a602a
   pull_request:
-    branches: [main, master]
-  workflow_dispatch:
-
-permissions:
-  contents: read
-  deployments: write
+    branches:
+      - main
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
-    name: Build and Deploy to Cloudflare Pages
+    name: Build and Deploy
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
-      
+
       - name: Install dependencies
         run: npm ci
-      
-      - name: Build production site
+
+      - name: Build project
         run: npm run build
-      
-      - name: Verify build output
-        run: |
-          if [ ! -d "dist" ]; then
-            echo "❌ Error: dist directory not found after build"
-            exit 1
-          fi
-          if [ ! -f "dist/index.html" ]; then
-            echo "❌ Error: dist/index.html not found"
-            exit 1
-          fi
-          file_count=$(ls -1 dist | wc -l)
-          echo "✅ Build verified: dist directory exists with $file_count files"
-          ls -la dist/
-      
-      - name: Deploy to Cloudflare Pages
+
+      - name: Deploy to Cloudflare Workers
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy dist --project-name=brian-kibet-portfolio --branch=${{ github.ref_name }}
-      
-      - name: Deployment Summary
-        if: success()
-        run: |
-          echo "✅ Deployment successful!"
-          echo "Project: brian-kibet-portfolio"
-          echo "Branch: ${{ github.ref_name }}"
-          echo "Commit: ${{ github.sha }}"
+          command: deploy
