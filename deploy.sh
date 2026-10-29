@@ -41,14 +41,17 @@ fi
 echo "✅ Build successful"
 echo ""
 
-# Deploy to Cloudflare
-echo "🚀 Deploying to Cloudflare Workers..."
-wrangler deploy
+# Deploy to Cloudflare Pages
+# NOTE: this project is a Cloudflare Pages project (pages_build_output_dir is
+# set in wrangler.toml). `wrangler deploy` only works for Workers with a
+# `main` entrypoint and will fail here — use `wrangler pages deploy` instead.
+echo "🚀 Deploying to Cloudflare Pages..."
+npx wrangler pages deploy dist --project-name=xbraan1-portfolio
 
 echo ""
 echo "✅ Deployment successful!"
 echo ""
 echo "🌐 Your site should now be live at:"
-echo "   https://portfolio.[your-subdomain].workers.dev"
+echo "   https://xbraan1-portfolio.pages.dev"
 echo ""
-echo "Check your Cloudflare dashboard for the exact URL."
+echo "Check your Cloudflare dashboard (Workers & Pages) for the exact URL."

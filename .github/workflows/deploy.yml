@@ -29,9 +29,11 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Deploy to Cloudflare Workers
+      - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: deploy
+          # This is a Cloudflare PAGES project (pages_build_output_dir is set
+          # in wrangler.toml), so we must use `pages deploy`, not `deploy`.
+          command: pages deploy dist --project-name=xbraan1-portfolio --branch=${{ github.ref_name }}
