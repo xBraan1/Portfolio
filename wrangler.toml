@@ -1,12 +1,6 @@
+# Cloudflare Pages configuration.
+# pages_build_output_dir tells wrangler this is a PAGES project, so use
+# `wrangler pages deploy` (NOT `wrangler deploy`, which is Workers-only).
 name = "xbraan1-portfolio"
 compatibility_date = "2024-01-01"
 pages_build_output_dir = "dist"
-
-[build]
-command = "npm run build"
-
-[env.production]
-name = "xbraan1-portfolio"
-
-[env.preview]
-name = "xbraan1-portfolio-preview"
